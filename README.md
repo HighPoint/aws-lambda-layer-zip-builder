@@ -26,7 +26,7 @@ For a Pillow layer:
     
 # Dockerfile for AWS Lambda Layer:
 
-Docker image can be found at:
+Docker container image can be found at:
 
 https://hub.docker.com/repository/docker/highpoints/aws-lambda-layer-zip-builder
 
