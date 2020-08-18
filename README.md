@@ -5,6 +5,18 @@ A Dockerfile to build Python compatible AWS Lambda Layers as a zip file. This us
     opencv-python  
     numpy
 
+# Docker Start
+
+Run this in docker for an opencv layer:
+
+    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder opencv-python 
+    
+It will produce a file, opencv-python3-7-x.zip as the AWS Lambda Layer. The Python version number appends to the filename, so opencv-python3-7-8.zip, for example, is Python version 3.7.8. AWS Lambda Layers only allows one period in the zip filename.
+
+For a numpy layer:
+
+opencv-python3-7-8.zip
+    
 # Dockerfile for AWS Lambda Layer
 
 Docker image can be found at:
