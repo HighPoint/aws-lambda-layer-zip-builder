@@ -1,11 +1,11 @@
-# aws-lambda-layer-zip-builder
+# aws-lambda-layer-zip-builder:
 
 A Dockerfile to build Python compatible AWS Lambda Layers as a zip file. This uses Amazon Linux 2 on Docker with Python 3.7.x. Use this to add a Python compatible lambda layer into your AWS Cloudformation stack. This has been successfully test on:
 
     opencv-python  
     numpy
 
-# Docker Start
+# Docker Start:
 
 Run this in docker for an opencv layer:
 
@@ -15,9 +15,10 @@ It will produce a file, opencv-python3-7-x.zip as the AWS Lambda Layer. The Pyth
 
 For a numpy layer:
 
-opencv-python3-7-8.zip
+    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder numpy
     
-# Dockerfile for AWS Lambda Layer
+    
+# Dockerfile for AWS Lambda Layer:
 
 Docker image can be found at:
 
