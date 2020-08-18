@@ -11,7 +11,7 @@ Run this in docker for an opencv layer:
 
     docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder opencv-python 
     
-It will produce a file, opencv-python3-7-x.zip as the AWS Lambda Layer. The Python version number appends to the filename, so opencv-python3-7-8.zip, for example, is Python version 3.7.8. AWS Lambda Layers only allows one period in the zip filename.
+It will produce a file, opencv-python3-7-x.zip, as the AWS Lambda Layer. The Python version number appends to the filename, so opencv-python3-7-8.zip, for example, is Python version 3.7.8. AWS Lambda Layers only allows one period in the zip filename.
 
 For a numpy layer:
 
