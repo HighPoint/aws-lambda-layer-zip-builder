@@ -33,4 +33,4 @@ https://hub.docker.com/repository/docker/highpoints/aws-lambda-layer-zip-builder
 
 #
 Thanks to:  
-http://tiivik.github.io
+https://github.com/tiivik
