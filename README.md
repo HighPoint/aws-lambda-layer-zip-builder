@@ -4,6 +4,8 @@ A Dockerfile to build Python compatible AWS Lambda Layers as a zip file. This us
 
     opencv-python  
     numpy
+    Pillow
+
 
 # Docker Start:
 
@@ -17,6 +19,10 @@ For a numpy layer:
 
     docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder numpy
     
+For a Pillow layer:
+
+    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder pillow
+    
     
 # Dockerfile for AWS Lambda Layer:
 
@@ -25,6 +31,5 @@ Docker image can be found at:
 https://hub.docker.com/repository/docker/highpoints/aws-lambda-layer-zip-builder
 
 
-Thank you to:
-
+Thank you to:  
 http://tiivik.github.io
