@@ -1,6 +1,6 @@
 # aws-lambda-layer-zip-builder:
 
-A Dockerfile to build Python compatible AWS Lambda Layers as a zip file. This uses Amazon Linux 2 on Docker with Python 3.7.x. Use this to add a Python compatible lambda layer to your AWS Cloudformation stack. This has been successfully test on:
+Build Python compatible AWS Lambda Layers as a zip file with Docker. This uses Amazon Linux 2 with Python 3.7.x. Use this to add a Python compatible lambda layer to your AWS Cloudformation stack. This has been successfully test on:
 
     opencv-python  
     numpy
