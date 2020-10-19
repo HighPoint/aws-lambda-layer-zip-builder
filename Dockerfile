@@ -1,4 +1,5 @@
 FROM amazonlinux:2 
+
 RUN yum -y install git \ &&
     yum -y install gcc g++ gcc gcc-c++ cmake \ &&
     yum -y install python3-pip \ &&
