@@ -5,10 +5,10 @@ RUN yum -y install git \ &&
     yum -y install zip \ &&
     yum clean all
     
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install boto3
-RUN python3 --version
-RUN pip --version
+RUN python3 -m pip install --upgrade pip \ &&
+    python3 -m pip install boto3 \ &&
+    python3 --version \ &&
+    pip --version
 
 LABEL version="1.1"
 
