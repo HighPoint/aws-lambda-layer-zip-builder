@@ -11,7 +11,7 @@ RUN python3 -m pip install --upgrade pip \ &&
     python3 --version \ &&
     pip --version
 
-LABEL version="1.1"
+LABEL version="1.2"
 
 ADD package.sh /
 RUN chmod -R 700 package.sh
