@@ -4,7 +4,7 @@ python3 -m pip install $1 -t temp
 
 version="$(python3 -V)"
 version="${version:7}"
-version="${version//"."/-}"
+version="${version//"."/-}" 
 
 file="$1$version"
 
