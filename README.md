@@ -5,6 +5,7 @@ Build Python compatible AWS Lambda Layers as a zip file with Docker. This uses A
     opencv-python  
     numpy
     Pillow
+    spaCy
 
 
 # Docker Start:
