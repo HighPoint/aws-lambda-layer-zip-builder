@@ -1,40 +1,73 @@
-# aws-lambda-layer-zip-builder: 
+# aws-lambda-layer-zip-builder (Python 3.13, Amazon Linux 2023)
 
-Build Python compatible AWS Lambda Layers as a zip file with Docker. This uses Amazon Linux 2 with Python 3.7.x. Use this to add a Python compatible lambda layer to your AWS Cloudformation stack. This has been successfully test on:
+Build AWS Lambda Layers as `.zip` files directly in Docker.  
+This image uses **Amazon Linux 2023** with **Python 3.13.x** and produces layers compatible with the AWS Lambda Python 3.13 runtime.
 
-    opencv-python  
-    numpy
-    Pillow
-    spaCy
+---
 
+## Description
 
-# Docker Start:
+This tool builds a Lambda-compatible layer for a single Python package per run.  
+It automatically installs the requested package inside the correct folder structure:
 
-Run this in docker for an opencv layer:
+```
+python/lib/python3.13/site-packages/
+```
 
-    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder opencv-python 
-    
-This produces a file, opencv-python3-7-x.zip, as the AWS Lambda Layer. The Python version number appends to the filename, so opencv-python3-7-8.zip, for example, is Python version 3.7.8. AWS Lambda Layers only allows one period in the zip filename.
+and compresses it into a zip suitable for direct upload as a Lambda Layer.
 
-For a numpy layer:
+---
 
-    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder numpy
-    
-For a Pillow layer:
+## Usage
 
-    docker run --rm -v $(pwd):/package highpoints/aws-lambda-layer-zip-builder pillow
-    
-    
-# Dockerfile for AWS Lambda Layer:
+Run the Docker container for any package you need:
 
-Docker container image can be found at:
+```bash
+mkdir -p out
+docker run --rm --platform=linux/amd64   -v "$(pwd)/out:/package"   highpoints/aws-lambda-layer-zip-builder:py313   numpy
+```
 
+This produces a layer zip:
+
+```
+out/layers/numpy3-13.zip
+```
+
+Attach this file as a Lambda Layer (runtime **Python 3.13**).
+
+---
+
+## Example
+
+**NumPy layer**
+```bash
+docker run --rm --platform=linux/amd64   -v "$(pwd)/out:/package"   highpoints/aws-lambda-layer-zip-builder:py313   numpy
+```
+
+Each command produces a zip named like:
+```
+<package>3-13.zip
+```
+which complies with the AWS Lambda Layer filename restriction (only one period allowed).
+
+---
+
+## Notes
+
+* Base OS: **Amazon Linux 2023**  
+* Python version: **3.13.x**
+* Compatible Lambda runtime: `python3.13`
+* Stripping of `.so` binaries has been **disabled** to ensure native library compatibility.
+* Tested with:
+  - **numpy**
+
+---
+
+## Docker Hub
+
+Prebuilt image:  
 https://hub.docker.com/repository/docker/highpoints/aws-lambda-layer-zip-builder
 
+---
 
-#
-Thanks to:  
-https://github.com/tiivik
-
-#
-Happy Coding!
+Happy Coding 🎉
